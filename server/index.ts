@@ -20,7 +20,7 @@ app.get("*", (_req, res) => {
   res.sendFile(path.join(staticPath, "index.html"));
 });
 
-// Local dev only — Vercel ignores this
+// Only listen locally — Vercel uses the export
 if (process.env.NODE_ENV !== "production") {
   const port = process.env.PORT || 3000;
   server.listen(port, () => {
